@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pulse 3D — Full Workflow Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#" aria-label="Pulse home">
+      <span class="brand-dot"></span>Pulse
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#about">About</a>
+      <a href="#manifesto">Manifesto</a>
+    </nav>
+    <a class="cta" href="#inner-circle">Inner Circle</a>
+  </header>
+
+  <main class="hero">
+    <p class="eyebrow reveal" style="--d:0.1s"><span class="live"></span>Full Workflow Automation.</p>
+    <h1 class="headline">
+      <span class="line reveal" style="--d:0.25s">We Manage Everything.</span>
+      <span class="line reveal" style="--d:0.4s">You <em>Unwind.</em></span>
+    </h1>
+    <div class="actions reveal" style="--d:0.6s">
+      <a class="btn primary" href="#inner-circle">Join the Inner Circle</a>
+      <a class="btn ghost" href="#projects">See projects <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+
+  <footer class="hero-foot reveal" style="--d:0.8s">
+    <span>Scroll</span>
+    <span class="meta">24/7 · Autonomous · Hands-off</span>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Propuesta B · Editorial Hueso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,50;1,9..144,300..700,50&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --hueso: #f3eee6;
+      --papel: #e8e1d5;
+      --tinta: #1d1a17;
+      --gris: #6f6a63;
+      --cemento: #b9b3a9;
+      --hoja: #4e5b3c;
+      --barro: #8a5a3b;
+      --pad: clamp(16px, 5vw, 72px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--hueso); color: var(--tinta); font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px var(--pad); border-bottom: 1px solid rgba(29,26,23,.12); }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .28em; font-size: 14px; }
+    .brand img { width: 34px; height: 34px; object-fit: contain; }
+    .links { display: none; gap: 28px; font-size: 14px; color: var(--gris); }
+    .links a:hover { color: var(--tinta); }
+    .menu { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+
+    .hero { padding: 28px var(--pad) 56px; display: grid; gap: 32px; }
+    .meta { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); }
+    h1 { font-family: "Fraunces", serif; font-weight: 340; font-variation-settings: "SOFT" 50, "opsz" 144; font-size: clamp(54px, 14vw, 156px); line-height: .92; letter-spacing: -.035em; }
+    h1 em { font-style: italic; font-weight: 300; color: var(--hoja); }
+    .lead { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: #3c3833; max-width: 36ch; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 26px; border-radius: 2px; background: var(--tinta); color: var(--hueso); font-weight: 600; font-size: 15px; transition: background .2s; }
+    .btn:hover { background: var(--hoja); }
+    .link { font-weight: 600; font-size: 15px; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+    .figs { position: relative; display: grid; grid-template-columns: 1fr; }
+    figure { position: relative; }
+    figure img { display: block; width: 100%; height: auto; object-fit: cover; filter: saturate(.75) contrast(1.02) sepia(.08); }
+    .fig-main img { aspect-ratio: 4 / 5; }
+    .fig-small { position: absolute; width: 42%; right: -4px; bottom: -28px; border: 6px solid var(--hueso); }
+    .fig-small img { aspect-ratio: 3 / 4; }
+    figcaption { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gris); margin-top: 10px; }
+    .fig-small figcaption { display: none; }
+
+    .strip { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(29,26,23,.14); margin-top: 24px; }
+    .strip div { padding: 16px 0; border-bottom: 1px solid rgba(29,26,23,.14); font-size: 14px; color: var(--gris); }
+    .strip div:nth-child(odd) { padding-right: 12px; }
+    .strip b { display: block; font-family: "Fraunces"; font-weight: 400; font-size: 26px; color: var(--tinta); }
+
+    .wa { position: fixed; right: 16px; bottom: 16px; z-index: 50; height: 52px; padding: 0 18px 0 14px; border-radius: 999px; display: flex; align-items: center; gap: 8px; background: #25d366; color: #0b2414; font-weight: 700; font-size: 14px; box-shadow: 0 10px 24px rgba(29,26,23,.25); }
+    .wa svg { width: 22px; height: 22px; }
+
+    .ficha { background: var(--papel); padding: 72px var(--pad); display: grid; gap: 40px; }
+    .ficha h2 { font-family: "Fraunces"; font-weight: 400; font-size: 44px; letter-spacing: -.02em; }
+    .ficha p { color: #3c3833; max-width: 60ch; line-height: 1.65; margin-top: 10px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; margin-top: 28px; }
+    .sw { background: var(--hueso); font-size: 12px; }
+    .sw i { display: block; height: 72px; border-bottom: 1px solid rgba(29,26,23,.1); }
+    .sw div { padding: 10px; }
+    .sw small { display: block; color: var(--gris); font-family: ui-monospace, monospace; margin-top: 2px; }
+    .type { display: grid; gap: 16px; }
+    .type div { background: var(--hueso); padding: 22px; }
+    .type .a { font-family: "Fraunces"; font-size: 46px; line-height: 1; letter-spacing: -.02em; }
+    .type .a em { color: var(--hoja); }
+    .type .b { font-size: 17px; line-height: 1.55; }
+    .type small { display: block; color: var(--gris); margin-top: 10px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+
+    @media (min-width: 900px) {
+      .links { display: flex; }
+      .menu { display: none; }
+      .hero { grid-template-columns: 1.15fr .85fr; align-items: end; gap: 64px; padding-top: 48px; padding-bottom: 96px; }
+      .meta { grid-column: 1 / -1; }
+      .strip { grid-template-columns: repeat(4, 1fr); }
+      .strip div { padding-right: 12px; }
+      .fig-small { right: auto; left: -22%; bottom: 40px; width: 40%; }
+      .fig-small figcaption { display: block; }
+      .ficha { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><img src="img/gato-tinta.png" alt="" width="34" height="34" />WONKRU</a>
+    <nav class="links" aria-label="Principal">
+      <a href="#">Clases</a><a href="#">Horario</a><a href="#">Box 24/7</a><a href="#">Tarifas</a><a href="#">Contacto</a>
+    </nav>
+    <a class="menu" href="#">Menú</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="meta"><span>Nº 01 — Training Box</span><span>Utebo, Zaragoza</span></div>
+      <div>
+        <h1>Stronger <em>than vinegar.</em></h1>
+        <p class="lead" style="margin-top:22px">Un box de cross training con coaches de verdad, grupos pequeños y un plan detrás de cada sesión. Vengas como vengas.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/34628319570?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba">Reserva tu clase de prueba <span aria-hidden="true">→</span></a>
+          <a class="link" href="#">Ver horario</a>
+        </div>
+        <div class="strip">
+          <div><b>24/7</b>Acceso con huella</div>
+          <div><b>Máx. 15</b>Personas en Cross</div>
+          <div><b>10</b>Clases distintas</div>
+          <div><b>Seguro</b>Centro cardioprotegido</div>
+        </div>
+      </div>
+      <div class="figs">
+        <figure class="fig-main">
+          <img src="img/sala.webp" alt="Zona de cardio del box con bicis y remos, y la planta superior al fondo" width="792" height="1060" />
+          <figcaption>Fig. 01 — La sala, primera planta</figcaption>
+        </figure>
+        <figure class="fig-small">
+          <img src="img/competitors.webp" alt="Dos atletas cargando un saco pesado al hombro durante una clase" width="568" height="840" />
+          <figcaption>Fig. 02 — Competitors</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="ficha">
+      <div>
+        <h2>B · Editorial hueso</h2>
+        <p>Clara y tranquila, como una revista de diseño. Mucho aire, una serif suave con aire setentero y fotos tratadas con calidez, con pie de foto. Transmite cuidado y calidad; es la más distinta de una web de gimnasio típica y la que mejor se lee al sol en el móvil.</p>
+        <div class="swatches">
+          <div class="sw"><i style="background:#f3eee6"></i><div>Hueso<small>#F3EEE6</small></div></div>
+          <div class="sw"><i style="background:#e8e1d5"></i><div>Papel<small>#E8E1D5</small></div></div>
+          <div class="sw"><i style="background:#1d1a17"></i><div>Tinta<small>#1D1A17</small></div></div>
+          <div class="sw"><i style="background:#b9b3a9"></i><div>Cemento<small>#B9B3A9</small></div></div>
+          <div class="sw"><i style="background:#4e5b3c"></i><div>Hoja<small>#4E5B3C</small></div></div>
+          <div class="sw"><i style="background:#8a5a3b"></i><div>Barro<small>#8A5A3B</small></div></div>
+        </div>
+      </div>
+      <div class="type">
+        <div><p class="a">Mobility <em>45 min</em></p><small>Títulos · Fraunces</small></div>
+        <div><p class="b">Trabajo de movilidad y prevención para moverte mejor dentro y fuera del box. Ideal como complemento a cualquier otra clase.</p><small>Texto · Manrope</small></div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa" href="https://wa.me/34628319570" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+    WhatsApp
+  </a>
+</body>
+</html>
