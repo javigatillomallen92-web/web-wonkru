@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Propuesta A · Espresso y Cemento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --espresso: #16110d;
+      --cafe: #2a1f18;
+      --cemento: #9c968e;
+      --cemento-claro: #c9c3b9;
+      --crema: #efe7da;
+      --cobre: #c4793f;
+      --hoja: #6e7b57;
+      --pad: clamp(16px, 5vw, 64px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--espresso); color: var(--crema); font-family: "Inter Tight", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Nav */
+    .nav { position: absolute; inset: 0 0 auto; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 18px var(--pad); }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: "Big Shoulders Display"; font-weight: 800; font-size: 26px; letter-spacing: 0.06em; }
+    .brand img { width: 40px; height: 40px; object-fit: contain; }
+    .links { display: none; gap: 32px; font-size: 14px; color: var(--cemento-claro); }
+    .links a:hover { color: var(--crema); }
+    .nav-cta { font-size: 13px; font-weight: 600; padding: 10px 16px; border: 1px solid rgba(239,231,218,.3); border-radius: 999px; }
+    .nav-cta:hover { border-color: var(--crema); }
+
+    /* Hero */
+    .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 110px var(--pad) 40px; isolation: isolate; overflow: hidden; }
+    .hero-photo { position: absolute; inset: 0; z-index: -2; background: url(img/comunidad.webp) center 30% / cover no-repeat; filter: grayscale(1) contrast(1.05) brightness(.8); transform: scale(1.06); animation: drift 18s ease-in-out infinite alternate; }
+    /* duotono espresso + vela cobre */
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+      radial-gradient(120% 80% at 80% 20%, rgba(196,121,63,.28), transparent 60%),
+      linear-gradient(180deg, rgba(22,17,13,.55) 0%, rgba(22,17,13,.35) 35%, rgba(22,17,13,.92) 78%, var(--espresso) 100%),
+      linear-gradient(0deg, rgba(42,31,24,.6), rgba(42,31,24,.6)); mix-blend-mode: normal; }
+    .hero::after { content: ""; position: absolute; inset: -50%; z-index: -1; opacity: .08; pointer-events: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+    @keyframes drift { to { transform: scale(1.12) translate(-1.5%, -1%); } }
+
+    .kicker { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--cemento-claro); margin-bottom: 18px; }
+    .kicker::before { content: ""; width: 28px; height: 1px; background: var(--cobre); }
+    h1 { font-family: "Big Shoulders Display"; font-weight: 900; text-transform: uppercase; line-height: .86; letter-spacing: -.005em; font-size: clamp(64px, 19vw, 210px); }
+    h1 .cobre { color: var(--cobre); display: block; }
+    .sub { margin-top: 20px; max-width: 34ch; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.5; color: var(--cemento-claro); }
+    .sub strong { color: var(--crema); font-weight: 500; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; font-weight: 600; font-size: 15px; transition: transform .2s, background .2s; }
+    .btn-primary { background: var(--cobre); color: var(--espresso); }
+    .btn-primary:hover { background: #d58a50; transform: translateY(-2px); }
+    .btn-ghost { border: 1px solid rgba(239,231,218,.28); }
+    .btn-ghost:hover { border-color: var(--crema); }
+
+    .facts { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(239,231,218,.12); border-top: 1px solid rgba(239,231,218,.12); }
+    .fact { background: var(--espresso); padding: 16px 0 4px; }
+    .fact b { display: block; font-family: "Big Shoulders Display"; font-weight: 800; font-size: 30px; color: var(--crema); }
+    .fact span { font-size: 13px; color: var(--cemento); }
+
+    .wa { position: fixed; right: 16px; bottom: 16px; z-index: 50; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #25d366; color: #0b2414; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    .wa svg { width: 28px; height: 28px; }
+
+    /* Ficha */
+    .ficha { padding: 72px var(--pad); border-top: 1px solid rgba(239,231,218,.1); display: grid; gap: 40px; }
+    .ficha h2 { font-family: "Big Shoulders Display"; font-weight: 800; font-size: 40px; text-transform: uppercase; letter-spacing: .02em; }
+    .ficha p { color: var(--cemento-claro); max-width: 60ch; line-height: 1.6; margin-top: 10px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+    .sw { border-radius: 12px; overflow: hidden; border: 1px solid rgba(239,231,218,.1); font-size: 12px; }
+    .sw i { display: block; height: 72px; }
+    .sw div { padding: 10px; background: var(--cafe); }
+    .sw small { display: block; color: var(--cemento); font-family: ui-monospace, monospace; margin-top: 2px; }
+    .type { display: grid; gap: 18px; }
+    .type div { padding: 20px; border-radius: 12px; background: var(--cafe); }
+    .type .a { font-family: "Big Shoulders Display"; font-weight: 900; font-size: 44px; text-transform: uppercase; line-height: 1; }
+    .type .b { font-size: 17px; line-height: 1.5; }
+    .type small { display: block; color: var(--cemento); margin-top: 8px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+
+    @media (min-width: 900px) {
+      .links { display: flex; }
+      .facts { grid-template-columns: repeat(4, 1fr); max-width: 900px; }
+      .hero { padding-bottom: 56px; }
+      .ficha { grid-template-columns: 1fr 1fr; }
+      .type { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-photo { animation: none; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><img src="img/gato-crema.png" alt="" width="40" height="40" />WONKRU</a>
+    <nav class="links" aria-label="Principal">
+      <a href="#">Clases</a><a href="#">Horario</a><a href="#">Box 24/7</a><a href="#">Tarifas</a><a href="#">Contacto</a>
+    </nav>
+    <a class="nav-cta" href="#">Acceso socios</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Socios de Wonkru Training Box celebrando juntos en la sala del box"></div>
+      <p class="kicker">Box de cross training · Utebo</p>
+      <h1>Stronger <span class="cobre">than vinegar.</span></h1>
+      <p class="sub">Cross training y entrenamiento funcional con coaches, <strong>grupos de máximo 15</strong> y una programación que tiene sentido.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/34628319570?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba">Reserva tu clase de prueba <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#">Ver horario</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>24/7</b><span>Acceso con huella</span></div>
+        <div class="fact"><b>15</b><span>Máximo por clase de Cross</span></div>
+        <div class="fact"><b>10</b><span>Tipos de clase</span></div>
+        <div class="fact"><b>DEKA</b><span>Center oficial</span></div>
+      </div>
+    </section>
+
+    <section class="ficha">
+      <div>
+        <h2>A · Espresso y cemento</h2>
+        <p>Oscuro y premium, como entrar al box por la noche: marrón de las paredes, gris de las columnas y un acento cobre cálido. La foto manda; el texto es grande, condensado y con aire de cartel antiguo de gimnasio. Es la más cercana a la web de referencia que te gusta.</p>
+        <div class="swatches" style="margin-top:28px">
+          <div class="sw"><i style="background:#16110d"></i><div>Espresso<small>#16110D</small></div></div>
+          <div class="sw"><i style="background:#2a1f18"></i><div>Café<small>#2A1F18</small></div></div>
+          <div class="sw"><i style="background:#9c968e"></i><div>Cemento<small>#9C968E</small></div></div>
+          <div class="sw"><i style="background:#efe7da"></i><div>Crema<small>#EFE7DA</small></div></div>
+          <div class="sw"><i style="background:#c4793f"></i><div>Cobre<small>#C4793F</small></div></div>
+          <div class="sw"><i style="background:#6e7b57"></i><div>Hoja<small>#6E7B57</small></div></div>
+        </div>
+      </div>
+      <div class="type">
+        <div><p class="a">Hybrid · 30 min</p><small>Títulos · Big Shoulders Display</small></div>
+        <div><p class="b">Sesiones por estaciones, guiadas por coach. Entras, trabajas y sales con la sensación de haber hecho algo bien.</p><small>Texto · Inter Tight</small></div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa" href="https://wa.me/34628319570" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+</body>
+</html>
