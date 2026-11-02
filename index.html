@@ -1,0 +1,477 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Wonkru Training Box</title>
+<meta name="description" content="Wonkru Training Box: cross training, fuerza, weightlifting, hybrid y movilidad en Utebo, Zaragoza.">
+<link rel="icon" href="cat-badge.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: noche de box — negro profundo, texto crema del gorro, verde salvia de la marca y el degradado de las gafas como único gesto de color. Look oscuro único y deliberado. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0A0A; --surface:#141414; --surface-2:#1C1C1B; --line:#2A2A28;
+  --ink:#F2EEE6; --muted:#A6A39B; --sage:#BFCD96; --sage-ink:#0A0A0A;
+  --goggle:linear-gradient(90deg,#17B2A2 0%,#F2C230 32%,#F0661C 52%,#F2C230 72%,#17B2A2 100%);
+  --c-cross:#4CC27A; --c-tone:#9B7BE0; --c-hybrid:#4FA8EC; --c-mobility:#E88AB8;
+  --c-strong:#D8D4CA; --c-weight:#F28A3E; --c-gym:#EBC845; --c-deka:#E05A4F;
+  --c-comp:#D35BC3; --c-hero:#FF5A45;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:112%;font-weight:700;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.8vw,2.7rem)}
+h3{font-size:1.2rem;font-weight:650}
+p{margin:0}
+a{color:inherit}
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85em 1.5em;font:600 .95rem var(--body);text-decoration:none;border:1px solid var(--sage);background:var(--sage);color:var(--sage-ink);border-radius:999px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:#4a4a46}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn:focus-visible,summary:focus-visible,a:focus-visible,.daybtn:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid;gap:14px;margin-bottom:44px;max-width:60ch}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.rule{height:2px;background:var(--goggle);border:0;margin:0}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:24px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px;display:block;border-radius:50%;box-shadow:0 0 0 2px var(--line)}
+footer .brand img{width:56px;height:56px}
+.brand b{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:1.15rem;letter-spacing:.12em;display:block;line-height:1}
+.brand small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--muted);margin-top:4px}
+nav.menu{display:flex;gap:26px;margin-left:auto;font-size:.92rem;font-weight:500;color:var(--muted)}
+nav.menu a{text-decoration:none}
+nav.menu a:hover{color:var(--ink)}
+header.top .btn{padding:.6em 1.15em;font-size:.88rem}
+@media (max-width:960px){nav.menu{display:none} header.top .btn{margin-left:auto}}
+
+.hero{padding-block:clamp(40px,6vw,80px) clamp(48px,7vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.hero h1 em{font-style:normal;background:var(--goggle);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:1.15rem;color:#cfccc4;max-width:48ch;margin-top:22px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.poster{justify-self:center;width:min(100%,430px);margin:0}
+.poster img{display:block;width:100%;height:auto;max-width:100%}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.poster{order:-1;width:min(70%,300px)}}
+
+.facts{border-block:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts .it{padding:26px 20px;border-right:1px solid var(--line);display:grid;gap:4px}
+.facts .it:first-child{padding-left:0}
+.facts .it:last-child{border:0}
+.facts b{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.45rem;line-height:1.15}
+.facts span{font-size:.9rem;color:var(--muted)}
+@media (max-width:760px){.facts .wrap{grid-template-columns:1fr 1fr}.facts .it{padding-left:0!important}.facts .it:nth-child(2){border-right:0}.facts .it:nth-child(-n+2){border-bottom:1px solid var(--line)}.facts .it:nth-child(even){padding-left:20px!important}}
+
+/* horario */
+.sched-scroll{overflow-x:auto}
+table.sched{width:100%;border-collapse:separate;border-spacing:6px;table-layout:fixed;min-width:780px}
+.sched thead th{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px;border-bottom:1px solid var(--line)}
+.sched th.time{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.05rem;color:var(--ink);width:72px;vertical-align:top;padding-top:10px;text-align:left;font-variant-numeric:tabular-nums}
+.sched td{vertical-align:top;padding:0}
+.slot{display:grid;gap:4px}
+.chip{display:flex;align-items:center;gap:8px;padding:9px 11px;font-weight:600;font-size:.93rem;background:var(--surface-2);border-radius:6px;line-height:1.2}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.open{font-size:.78rem;color:var(--muted);padding:0 11px}
+.empty{display:block;min-height:38px;border-radius:6px;border:1px dashed var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;font-size:.88rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.days{display:none;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.daybtn{border:1px solid #4a4a46;background:transparent;color:var(--ink);font:600 .9rem var(--body);padding:.5em .95em;border-radius:999px;cursor:pointer}
+.daybtn[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:var(--sage-ink)}
+.daylist{display:none;gap:10px}
+.dayrow{display:grid;grid-template-columns:60px 1fr;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:10px}
+.dayrow b{font-family:var(--display);font-weight:700;font-size:1.05rem;padding-top:8px;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.sched-scroll{display:none}.days{display:flex}.daylist{display:grid}}
+
+/* clases */
+#clases{background:var(--surface)}
+.classes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cls{background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;align-content:start}
+.cls .ph{display:block;width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.9)}
+.cls .in{padding:22px 24px 26px;display:grid;gap:8px}
+.cls .meta{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cls .meta::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.cls p{color:#c4c1b9}
+@media (max-width:760px){.classes{grid-template-columns:1fr}}
+
+/* programas */
+.progs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;align-content:start;min-width:0}
+.prog > img{display:block;width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 35%}
+.prog .in{padding:26px;display:grid;gap:12px;align-content:start}
+.tag{justify-self:start;border:1px solid var(--sage);color:var(--sage);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.prog p{color:#c4c1b9}
+.prog ul{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.prog li{padding-left:20px;position:relative;color:var(--ink)}
+.prog li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--sage)}
+.bodies{display:flex;flex-wrap:wrap;gap:8px}
+.bodies span{border:1px solid #4a4a46;font-family:var(--display);font-stretch:112%;font-weight:650;font-size:.95rem;padding:7px 12px;border-radius:999px;line-height:1.1;align-self:start}
+.prog .btn{justify-self:start;margin-top:8px}
+@media (max-width:860px){.progs{grid-template-columns:1fr}}
+
+/* nutrición */
+.nutri{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.nutri figure{margin:0;min-width:0}
+.nutri img{display:block;width:100%;max-width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+.nutri-text{display:grid;gap:16px;min-width:0;max-width:60ch}
+.nutri-text p{color:#c4c1b9}
+.goals{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.goals li{border:1px solid #4a4a46;border-radius:999px;padding:6px 14px;font-size:.92rem;font-weight:500}
+.nutri-text .punch{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.25rem;line-height:1.3;color:var(--ink);border-left:2px solid var(--sage);padding-left:16px}
+.nutri-contact{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:860px){.nutri{grid-template-columns:1fr;gap:32px}.nutri img{aspect-ratio:4/3;object-position:60% 30%}}
+/* box */
+#box{background:var(--surface)}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:12px;margin-bottom:48px}
+.mosaic figure{margin:0;position:relative;min-width:0;border-radius:10px;overflow:hidden}
+.mosaic .big{grid-row:span 2}
+.mosaic .wide{grid-column:span 2}
+.mosaic img{display:block;width:100%;height:100%;max-width:100%;object-fit:cover}
+.mosaic figcaption{position:absolute;left:14px;bottom:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(10,10,10,.75);padding:6px 10px;border-radius:999px}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}.mosaic figure{aspect-ratio:3/4}.mosaic .big{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}.mosaic .wide{aspect-ratio:16/9}}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.zone{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;align-content:start;min-width:0}
+.zone img{display:block;width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover}
+.zone figcaption{padding:18px 20px 22px;display:grid;gap:6px}
+.zone p{color:var(--muted)}
+@media (max-width:860px){.zones{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.zones{grid-template-columns:1fr}}
+
+.crew{position:relative;padding:0}
+.crew img{display:block;width:100%;max-width:100%;height:clamp(340px,52vw,640px);object-fit:cover;object-position:50% 55%}
+.crew .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(10,10,10,.92) 60%)}
+.crew .cap .wrap{padding-block:80px 36px;display:grid;gap:10px}
+.crew p{max-width:56ch;color:#dcd9d1}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:s}
+.step{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:20px;align-content:start}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-stretch:125%;font-weight:800;font-size:2rem;line-height:1;background:var(--goggle);-webkit-background-clip:text;background-clip:text;color:transparent;justify-self:start}
+.step p{color:var(--muted)}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+#dudas{background:var(--surface)}
+.faq-grid{display:grid;grid-template-columns:220px 1fr;gap:48px}
+.cats{display:grid;gap:10px;align-content:start;position:sticky;top:96px}
+.cats a{text-decoration:none;color:var(--muted);font-weight:500}
+.cats a:hover{color:var(--ink)}
+.faq-group{margin-bottom:40px}
+.faq-group h3{margin-bottom:8px;color:var(--sage);font-size:1rem;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font-weight:600;font-size:1.05rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{padding:0 0 20px;color:var(--muted);max-width:66ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}.cats{position:static;display:flex;flex-wrap:wrap;gap:8px 20px}}
+
+#donde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;display:grid;gap:16px}
+.card .row{display:grid;grid-template-columns:110px 1fr;gap:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.card .row:last-child{border:0;padding:0}
+.card .row .label{color:var(--muted);padding-top:3px}
+.card .val{font-weight:600}
+.card .val small{display:block;font-weight:400;color:var(--muted);font-size:.92rem}
+.card .val a{text-decoration-color:var(--sage);text-underline-offset:4px}
+.tel{font-family:var(--display);font-stretch:112%;font-size:1.35rem;letter-spacing:.03em;user-select:all;font-variant-numeric:tabular-nums}
+@media (max-width:860px){#donde .wrap{grid-template-columns:1fr}}
+@media (max-width:420px){.card .row{grid-template-columns:1fr;gap:2px}}
+
+footer{border-top:1px solid var(--line);padding-block:56px 32px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px}
+footer h4{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.95rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--sage)}
+.slogan{font-family:var(--mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-top:14px}
+.legal{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:#7d7a73;display:flex;flex-wrap:wrap;gap:8px 22px}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+.wa-float{position:fixed;z-index:20;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;background:#25D366;color:#0A0A0A;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.wa-float:hover{background:#1FBE5B}
+.wa-float:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (max-width:600px){.wa-float{padding:14px}.wa-float span{display:none}}
+@media (prefers-reduced-motion:no-preference){.wa-float{animation:waIn .5s ease-out .8s both}@keyframes waIn{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .2s,color .2s,border-color .2s}}
+</style>
+</head><body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#inicio"><img src="cat-badge.webp" width="240" height="240" alt=""><span><b>WONKRU</b><small>TRAINING BOX</small></span></a>
+  <nav class="menu" aria-label="Principal">
+    <a href="#horario">Horario</a><a href="#clases">Clases</a><a href="#programas">+60 y oposiciones</a><a href="#nutricion">Nutrición</a><a href="#box">El box</a><a href="#dudas">Dudas</a><a href="#donde">Contacto</a>
+  </nav>
+  <a class="btn" href="#donde">Clase de prueba</a>
+</div></header>
+
+<main id="inicio">
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="label">Cross training · Utebo, Zaragoza</span>
+    <h1 style="margin-top:18px">Entrena en grupo.<br>Hazte más fuerte<br><em>que el vinagre.</em></h1>
+    <p class="lede">Clases dirigidas de cross training, fuerza, weightlifting, hybrid y movilidad, con programación pensada semana a semana. Empiezas a tu nivel; los coaches se encargan del resto.</p>
+    <div class="ctas"><a class="btn" href="#donde">Pide tu clase de prueba</a><a class="btn ghost" href="#horario">Ver horario</a></div>
+  </div>
+  <figure class="poster"><img src="logo-negro.webp" width="720" height="1026" alt="Logo de Wonkru Box: gato con gorro de pescador y gafas de colores, con el lema Stronger than vinegar"></figure>
+</div></section>
+
+<hr class="rule">
+<div class="facts" aria-label="Wonkru de un vistazo"><div class="wrap">
+  <div class="it"><b>60 min</b><span>cada clase</span></div>
+  <div class="it"><b>Mañana y tarde</b><span>de lunes a viernes</span></div>
+  <div class="it"><b>Hero WOD</b><span>sábados a las 11:00</span></div>
+  <div class="it"><b>Acceso 24/7</b><span>para entrenar en el open</span></div>
+</div></div>
+
+<section id="horario"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">Horario semanal</span>
+    <h2>Horario de clases</h2>
+    <p>Todas las clases duran una hora. Cuando ves "Open box", la zona libre está disponible a la vez que la clase para entrenar por tu cuenta.</p>
+  </div>
+  <div class="days" id="days" role="group" aria-label="Elige día"></div>
+  <div class="daylist" id="daylist"></div>
+  <div class="sched-scroll"><table class="sched" id="sched"></table></div>
+  <div class="legend" id="legend"></div>
+</div></section>
+
+<section id="clases"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">Clases</span>
+    <h2>Un box, muchas formas de entrenar</h2>
+    <p>Todas las clases son en grupo, duran una hora y siempre hay un coach dirigiendo y corrigiendo.</p>
+  </div>
+  <div class="classes">
+    <article class="cls" style="--c:var(--c-cross)"><img class="ph" src="img/cross.webp" alt="Atleta preparando un levantamiento con barra en clase de Cross" loading="lazy" style="object-position:50% 45%"><div class="in"><span class="meta">60 min · todos los niveles</span><h3>Cross</h3><p>Cada sesión tiene tres partes: calentamiento, parte de fuerza y WOD. El WOD (Workout of the Day) es el entrenamiento del día: un bloque intenso, por tiempo o por rondas, que combina weightlifting, gimnásticos y cardio.</p></div></article>
+    <article class="cls" style="--c:var(--c-tone)"><img class="ph" src="img/tone.webp" alt="Dos atletas haciendo step-ups con mancuernas en un cajón" loading="lazy" style="object-position:50% 50%"><div class="in"><span class="meta">60 min · todos los niveles</span><h3>Tone</h3><p>Entrenamiento de fuerza con mancuernas, kettlebells y máquinas. Trabajamos tren superior, tren inferior y cuerpo completo en superseries para ganar fuerza, masa muscular y estabilidad, y cerramos cada sesión con core.</p></div></article>
+    <article class="cls" style="--c:var(--c-hybrid)"><img class="ph" src="img/hybrid.webp" alt="Grupo de atletas corriendo junto al box" loading="lazy"><div class="in"><span class="meta">60 min · todos los niveles</span><h3>Hybrid</h3><p>Entrenamiento por estaciones que combina cardio (remo, ski, bike) con ejercicios de fuerza funcional. Individual, en parejas o por equipos, para mejorar tu resistencia y tu capacidad de mantener el esfuerzo.</p></div></article>
+    <article class="cls" style="--c:var(--c-mobility)"><img class="ph" src="img/mobility.webp" alt="Clase trabajando core en el suelo con el portón del box abierto" loading="lazy" style="object-position:50% 60%"><div class="in"><span class="meta">60 min · todos los niveles</span><h3>Mobility</h3><p>Movilidad de cuerpo completo y de zonas concretas para moverte mejor y rendir más en el resto de clases.</p></div></article>
+    <article class="cls" style="--c:var(--c-weight)"><img class="ph" src="img/weightlifting.webp" alt="Coach en sentadilla con la barra por encima de la cabeza en el box" loading="lazy" style="object-position:50% 48%"><div class="in"><span class="meta">60 min · técnica</span><h3>Weightlifting</h3><p>Halterofilia: clean, snatch y jerk. Media hora de técnica pura más trabajo de accesorios.</p></div></article>
+    <article class="cls" style="--c:var(--c-gym)"><img class="ph" src="img/gymnastics.webp" alt="Atleta en apoyo sobre la barra de dominadas" loading="lazy" style="object-position:50% 40%"><div class="in"><span class="meta">60 min · técnica</span><h3>Gymnastics</h3><p>Dominadas, muscle-ups, pino y control corporal, trabajados por progresiones.</p></div></article>
+    <article class="cls" style="--c:var(--c-strong)"><img class="ph" src="img/strongman.webp" alt="Dos atletas en sentadilla cargando un saco de strongman al hombro" loading="lazy" style="object-position:50% 40%"><div class="in"><span class="meta">60 min · fuerza</span><h3>Strongman</h3><p>Trineo, sacos y desplazamientos con carga. Bloque de fuerza y un WOD para cerrar.</p></div></article>
+    <article class="cls" style="--c:var(--c-deka)"><img class="ph" src="img/deka.webp" alt="Atleta empujando un trineo en una competición" loading="lazy" style="object-position:50% 30%"><div class="in"><span class="meta">60 min · resistencia</span><h3>Deka</h3><p>Preparación para pruebas de fitness por zonas, combinando cardio y estaciones de fuerza.</p></div></article>
+    <article class="cls" style="--c:var(--c-comp)"><img class="ph" src="img/competitors.webp" alt="Atleta concentrada antes de levantar la barra" loading="lazy" style="object-position:50% 55%"><div class="in"><span class="meta">60 min · avanzado</span><h3>Competitors</h3><p>Para quien quiere competir: más volumen, más técnica y trabajo específico para competiciones.</p></div></article>
+    <article class="cls" style="--c:var(--c-hero)"><img class="ph" src="img/herowod.webp" alt="Foto de grupo de los atletas de Wonkru en el box" loading="lazy"><div class="in"><span class="meta">60 min · sábados</span><h3>Hero WOD</h3><p>El entreno especial del sábado por la mañana. Largo, duro y en buena compañía.</p></div></article>
+  </div>
+</div></section>
+
+<section id="programas"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">Programas especiales</span>
+    <h2>Entrenamiento con un objetivo concreto</h2>
+    <p>Además de las clases del horario, tenemos dos programas pensados para necesidades muy concretas.</p>
+  </div>
+  <div class="progs">
+    <article class="prog">
+      <img src="img/todos.webp" alt="Atleta veterano haciendo press con mancuernas en el suelo durante una clase" loading="lazy">
+      <div class="in">
+        <span class="tag">Nuevo · enero 2027</span>
+        <h3>Wonkru Vital · mayores de 60</h3>
+        <p>Clases para personas mayores autónomas. Entrenamos para seguir siendo independientes en el día a día: subir escaleras, cargar la compra, levantarse del suelo y moverse con seguridad.</p>
+        <ul>
+          <li>Fuerza, equilibrio y movilidad adaptados a cada persona</li>
+          <li>Grupos reducidos con un coach siempre pendiente</li>
+          <li>Mañanas de 11:30 a 12:30</li>
+        </ul>
+        <a class="btn" href="https://wa.me/34628319570" target="_blank" rel="noopener">Pide información</a>
+      </div>
+    </article>
+    <article class="prog">
+      <img src="img/oposiciones.webp" alt="Una bombera, un policía, una guardia civil y un militar de uniforme en la sala de Wonkru" loading="lazy" style="object-position:50% 72%">
+      <div class="in">
+        <span class="tag">Oposiciones</span>
+        <div class="bodies" aria-label="Cuerpos que preparamos"><span>Bombero</span><span>Guardia Civil</span><span>Policía Local</span><span>Policía Nacional</span><span>Ejército</span></div>
+        <h3>Preparación física para oposiciones</h3>
+        <p>Preparamos las pruebas físicas de bombero, Guardia Civil, Policía Local, Policía Nacional y Ejército. Planificamos el entrenamiento según las pruebas y las marcas de tu convocatoria para que llegues al examen en tu mejor momento.</p>
+        <ul>
+          <li>Plan basado en las pruebas de tu convocatoria</li>
+          <li>Carrera, fuerza, dominadas, saltos y circuitos</li>
+          <li>Control de marcas y simulacros de examen</li>
+        </ul>
+        <a class="btn" href="https://wa.me/34628319570" target="_blank" rel="noopener">Cuéntanos qué preparas</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="nutricion"><div class="wrap nutri">
+  <figure><img src="img/nutricion.webp" alt="Consulta de nutrición: la nutricionista toma notas mientras habla con una clienta" loading="lazy"></figure>
+  <div class="nutri-text">
+    <span class="label">Nutrición · Mery Real Fit</span>
+    <h2>Nutrición deportiva para mejorar tu rendimiento y composición corporal</h2>
+    <p>La nutrición es una parte clave de tu progreso en cross training. No solo influye en tu peso, también en tu energía, tu fuerza, tu recuperación, tus digestiones y tus resultados.</p>
+    <p>En Mery Real Fit te ayudamos a adaptar tu alimentación a tus entrenamientos y a tu objetivo:</p>
+    <ul class="goals"><li>Perder grasa</li><li>Ganar masa muscular</li><li>Rendir mejor</li><li>Recuperarte antes</li><li>Comer de forma más organizada</li></ul>
+    <p>Trabajamos con una nutrición personalizada, flexible y realista, sin dietas extremas ni contar calorías de forma obsesiva.</p>
+    <p class="punch">Entrena fuerte, come mejor y consigue resultados que puedas mantener.</p>
+    <div class="nutri-contact">
+      <span class="label">Contacto de Mery</span>
+      <span class="tel">696 832 345</span>
+    </div>
+    <div class="ctas" style="margin-top:0">
+      <a class="btn" href="https://wa.me/34696832345" target="_blank" rel="noopener">WhatsApp de Mery</a>
+      <a class="btn ghost" href="https://www.instagram.com/meryrealfit/" target="_blank" rel="noopener">@meryrealfit</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="box"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">El box</span>
+    <h2>Instalaciones nuevas en Utebo</h2>
+    <p>Una nave amplia y luminosa, con material de sobra, vestuarios completos y zonas para descansar. Además somos centro cardioprotegido, con desfibrilador y equipo formado para usarlo.</p>
+  </div>
+  <div class="mosaic">
+    <figure class="big"><img src="img/sala-aerea.webp" alt="Vista desde arriba de la sala de entreno de Wonkru con el rótulo WONKRU y los racks" loading="lazy" style="object-position:50% 40%"><figcaption>Sala de entreno</figcaption></figure>
+    <figure><img src="img/sala-mural.webp" alt="Pared con el mural del gato, anillas y racks" loading="lazy" style="object-position:50% 45%"></figure>
+    <figure><img src="img/sala-wonkru.webp" alt="Sala principal con el rótulo WONKRU y la zona de racks" loading="lazy" style="object-position:50% 40%"></figure>
+    <figure class="wide"><img src="img/sala-fondo.webp" alt="Fondo de la sala con balones medicinales, cajones y sacos" loading="lazy" style="object-position:50% 50%"></figure>
+  </div>
+  <div class="zones">
+    <figure class="zone"><img src="img/material.webp" alt="Discos, kettlebells, mancuernas y barras junto a los racks" loading="lazy" style="object-position:50% 60%"><figcaption><h3>Zona open y material</h3><p>Barras, discos, kettlebells y mancuernas para entrenar por tu cuenta a cualquier hora con el sistema de acceso 24/7.</p></figcaption></figure>
+    <figure class="zone"><img src="img/vestuario.webp" alt="Vestuario con lavabos hechos con bidones negros y espejos redondos" loading="lazy" style="object-position:50% 45%"><figcaption><h3>Vestuarios</h3><p>Dos vestuarios amplios con lavabos, bancos y zona de cambio.</p></figcaption></figure>
+    <figure class="zone"><img src="img/duchas.webp" alt="Duchas con separadores y cortinas" loading="lazy" style="object-position:50% 45%"><figcaption><h3>Duchas</h3><p>Duchas en cada vestuario para salir del box listo para seguir con tu día.</p></figcaption></figure>
+    <figure class="zone"><img src="img/zona-alta.webp" alt="Zona superior con mesas altas y taburetes asomada a la sala" loading="lazy" style="object-position:50% 55%"><figcaption><h3>Zona alta</h3><p>Una planta superior con mesas y taburetes para descansar, charlar y ver los entrenos desde arriba.</p></figcaption></figure>
+    <figure class="zone"><img src="img/kids.webp" alt="Kids zone con mural, césped, túnel, mesa y taburetes infantiles" loading="lazy" style="object-position:50% 55%"><figcaption><h3>Kids zone</h3><p>Un rincón con juegos para que los peques se entretengan mientras entrenas.</p></figcaption></figure>
+    <figure class="zone"><img src="img/recepcion.webp" alt="Entrada del box con la barra de recepción The Burpee" loading="lazy" style="object-position:50% 35%"><figcaption><h3>Recepción</h3><p>La entrada del box y la barra de The Burpee, donde empieza y acaba cada entreno.</p></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="crew" aria-label="Comunidad Wonkru">
+  <img src="img/comunidad.webp" alt="Foto de grupo de la comunidad de Wonkru celebrando en el box" loading="lazy">
+  <div class="cap"><div class="wrap">
+    <span class="label">La comunidad</span>
+    <h2>Aquí nadie entrena solo</h2>
+    <p>Competiciones, Hero WODs, eventos y muchas risas. Lo que más se queda de Wonkru es la gente con la que entrenas.</p>
+  </div></div>
+</section>
+
+<section id="primera"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">Tu primera vez</span>
+    <h2>Nunca has hecho cross training. Perfecto.</h2>
+    <p>La mayoría de la gente que entra por la puerta tampoco. Así es tu primer día.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><h3>Nos cuentas qué buscas</h3><p>Escríbenos y te preguntamos por tu objetivo, tu experiencia y cualquier molestia, para recomendarte la clase que mejor encaja.</p></div>
+    <div class="step"><h3>Vienes a una clase de prueba</h3><p>El coach te explica cada movimiento y adapta pesos y ejercicios a tu nivel. Nadie te va a dejar solo.</p></div>
+    <div class="step"><h3>Te unes a la comunidad</h3><p>Si te gusta, te damos de alta en nuestra app de reservas y en el sistema de acceso 24/7.</p></div>
+  </div>
+</div></section>
+
+<section id="dudas"><div class="wrap">
+  <div class="sec-head">
+    <span class="label">Preguntas frecuentes</span>
+    <h2>¿Tienes dudas?</h2>
+    <p>Las preguntas que más nos hacéis antes de apuntaros. Si la tuya no está, escríbenos.</p>
+  </div>
+  <div class="faq-grid">
+    <nav class="cats" aria-label="Categorías de dudas">
+      <a href="#f-empezar">Empezar</a><a href="#f-clases">Clases y reservas</a><a href="#f-box">El box</a>
+    </nav>
+    <div>
+      <div class="faq-group" id="f-empezar"><h3>Empezar</h3>
+        <details><summary>Nunca he hecho cross training. ¿Puedo apuntarme?</summary><p>Sí. Todos los ejercicios se adaptan: menos peso, menos repeticiones o una variante más sencilla. Todas nuestras clases están abiertas a cualquier nivel.</p></details>
+        <details><summary>¿Me voy a sentir fuera de lugar?</summary><p>No. En cada clase hay gente de todos los niveles y el coach está pendiente de ti desde el primer día. Entrenar en grupo es justo lo que hace que vuelvas.</p></details>
+        <details><summary>Tengo una lesión o una molestia. ¿Puedo entrenar?</summary><p>Cuéntanoslo antes de la primera clase. Adaptamos los ejercicios para que trabajes sin cargar la zona. Si la lesión es reciente, consulta antes con tu médico o fisio.</p></details>
+        <details><summary>¿Qué tengo que traer?</summary><p>Ropa cómoda, zapatillas de entrenamiento, agua y una toalla. El material lo ponemos nosotros.</p></details>
+      </div>
+      <div class="faq-group" id="f-clases"><h3>Clases y reservas</h3>
+        <details><summary>¿Cómo reservo una clase?</summary><p>Trabajamos con una app de reservas. Al darte de alta te damos acceso y desde ahí ves el horario y reservas tu plaza.</p></details>
+        <details><summary>¿Cuánto dura cada clase?</summary><p>Todas las clases duran una hora.</p></details>
+        <details><summary>¿Qué diferencia hay entre Cross, Tone y Hybrid?</summary><p>Cross tiene calentamiento, fuerza y WOD. Tone es trabajo de fuerza con mancuernas, kettlebells y máquinas. Hybrid combina cardio y fuerza funcional por estaciones.</p></details>
+        <details><summary>¿Hay clases el fin de semana?</summary><p>Los sábados a las 11:00 hay Hero WOD. El resto del fin de semana puedes entrenar por tu cuenta en la zona open.</p></details>
+        <details><summary>¿Tenéis clases para personas mayores?</summary><p>Sí. A partir de enero de 2027 empieza Wonkru Vital, para mayores de 60 años autónomos, por las mañanas de 11:30 a 12:30. Trabajamos fuerza, equilibrio y movilidad para mantener la independencia en el día a día.</p></details>
+        <details><summary>¿Preparáis oposiciones?</summary><p>Sí, preparamos las pruebas físicas de bombero, Guardia Civil, Policía Local, Policía Nacional y Ejército. Escríbenos con tu convocatoria y te contamos cómo lo planteamos.</p></details>
+        <details><summary>¿Qué es el "Open box" del horario?</summary><p>Es la zona libre del box. Está disponible a la vez que la clase para que puedas hacer tu propio entreno.</p></details>
+      </div>
+      <div class="faq-group" id="f-box"><h3>El box</h3>
+        <details><summary>¿Puedo entrenar fuera del horario de clases?</summary><p>Sí. Tenemos sistema de acceso 24/7, así que los socios pueden entrenar en la zona open cualquier día a cualquier hora.</p></details>
+        <details><summary>¿Dónde estáis?</summary><p>En la Calle Dinamarca 74, nave 5, en el Polígono La Casaza de Utebo, frente a la gasolinera Bonarea.</p></details>
+        <details><summary>¿Hay duchas y vestuarios?</summary><p>Sí, dos vestuarios con duchas, lavabos y zona de cambio.</p></details>
+        <details><summary>¿Puedo venir con mis hijos?</summary><p>Tenemos una kids zone con juegos para que los peques se entretengan mientras entrenas. Pregúntanos y te contamos cómo funciona.</p></details>
+        <details><summary>¿Es un centro seguro?</summary><p>Wonkru es centro cardioprotegido: tenemos desfibrilador y formación para usarlo.</p></details>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="donde"><div class="wrap">
+  <div class="sec-head" style="margin:0">
+    <span class="label">Contacto</span>
+    <h2>En Utebo, a diez minutos de Zaragoza</h2>
+    <p>Escríbenos por WhatsApp o Instagram, cuéntanos qué buscas y te reservamos una clase de prueba.</p>
+    <div class="ctas" style="margin-top:10px">
+      <a class="btn" href="https://wa.me/34628319570" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      <a class="btn ghost" href="https://www.instagram.com/wonkrutrainingbox/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="row"><span class="label">Dirección</span><span class="val"><a href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Dinamarca+74+Poligono+La+Casaza+Utebo" target="_blank" rel="noopener">Calle Dinamarca 74, nave 5</a><small>Polígono La Casaza, Utebo (Zaragoza) · frente a la gasolinera Bonarea</small></span></div>
+    <div class="row"><span class="label">Teléfono</span><span class="val tel">628 319 570</span></div>
+    <div class="row"><span class="label">Clases</span><span class="val">Lunes a viernes, mañana y tarde<small>Sábado: Hero WOD a las 11:00</small></span></div>
+    <div class="row"><span class="label">Acceso</span><span class="val">24 h · 7 días</span></div>
+  </div>
+</div></section>
+</main>
+
+<hr class="rule">
+<footer><div class="wrap">
+  <div class="cols">
+    <div><span class="brand"><img src="cat-badge.webp" width="240" height="240" alt=""><span><b>WONKRU</b><small>TRAINING BOX</small></span></span><p class="slogan">Stronger than vinegar</p></div>
+    <div><h4>Entrenar</h4><ul><li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#programas">Wonkru Vital +60</a></li><li><a href="#programas">Oposiciones</a></li><li><a href="#nutricion">Nutrición</a></li></ul></div>
+    <div><h4>El box</h4><ul><li><a href="#box">Instalaciones</a></li><li><a href="#primera">Primera vez</a></li><li><a href="#dudas">Preguntas frecuentes</a></li></ul></div>
+    <div><h4>Contacto</h4><ul><li>628 319 570</li><li><a href="https://wa.me/34628319570" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.instagram.com/wonkrutrainingbox/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Wonkru Training Box · Calle Dinamarca 74, nave 5, Utebo</span><span>Aviso legal</span><span>Privacidad</span><span>Cookies</span><span>Normas del box</span></div>
+</div></footer>
+
+<a class="wa-float" href="https://wa.me/34628319570" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.7-5.6C5.2 10 10 5.3 16 5.3s10.8 4.7 10.8 10.5S22 26.3 16 26.3zm5.9-7.8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  <span>¿Hablamos?</span>
+</a>
+
+<script>
+(function(){
+  var DAYS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  var COL={'Cross':'cross','Tone':'tone','Hybrid':'hybrid','Mobility':'mobility','Strongman':'strong','Weightlifting':'weight','Gymnastics':'gym','Deka':'deka','Competitors':'comp','Hero WOD':'hero'};
+  var S=[
+    ['09:30',[['Cross'],['Cross'],['Hybrid'],['Cross'],['Cross'],[]]],
+    ['10:30',[['Tone'],['Tone'],['Cross'],['Mobility'],['Tone'],[]]],
+    ['11:00',[[],[],[],[],[],['Hero WOD']]],
+    ['17:00',[['Cross'],['Cross'],['Cross'],['Hybrid'],['Cross'],[]]],
+    ['18:15',[['Cross','Tone'],['Cross'],['Hybrid','Weightlifting'],['Mobility','Tone'],['Deka'],[]]],
+    ['19:30',[['Hybrid','Gymnastics'],['Strongman','Tone'],['Cross'],['Cross'],['Competitors'],[]]],
+    ['20:45',[['Cross'],['Cross'],['Cross'],['Cross'],[],[]]]
+  ];
+  function slot(cls,d){
+    if(!cls.length) return '<span class="empty" aria-label="Sin clase"></span>';
+    var h=cls.map(function(c){return '<span class="chip" style="--c:var(--c-'+COL[c]+')">'+c+'</span>';}).join('');
+    if(d<5&&cls.length===1) h+='<span class="open">+ Open box</span>';
+    return '<div class="slot">'+h+'</div>';
+  }
+  var t='<thead><tr><th></th>'+DAYS.map(function(d){return '<th scope="col">'+d+'</th>';}).join('')+'</tr></thead><tbody>';
+  S.forEach(function(r){t+='<tr><th scope="row" class="time">'+r[0]+'</th>'+r[1].map(function(c,d){return '<td>'+slot(c,d)+'</td>';}).join('')+'</tr>';});
+  document.getElementById('sched').innerHTML=t+'</tbody>';
+  var days=document.getElementById('days'),list=document.getElementById('daylist');
+  function show(d){
+    days.querySelectorAll('button').forEach(function(b,i){b.setAttribute('aria-pressed',i===d);});
+    var h='';
+    S.forEach(function(r){var c=r[1][d];if(c.length) h+='<div class="dayrow"><b>'+r[0]+'</b>'+slot(c,d)+'</div>';});
+    list.innerHTML=h;
+  }
+  days.innerHTML=DAYS.map(function(d){return '<button class="daybtn" type="button">'+d.slice(0,3)+'</button>';}).join('');
+  days.querySelectorAll('button').forEach(function(b,i){b.addEventListener('click',function(){show(i);});});
+  var today=(new Date().getDay()+6)%7; show(today>5?0:today);
+  document.getElementById('legend').innerHTML=Object.keys(COL).map(function(c){return '<span><i style="--c:var(--c-'+COL[c]+')"></i>'+c+'</span>';}).join('');
+})();
+</script>
+
+</body></html>
