@@ -116,7 +116,10 @@ table.sched{width:100%;border-collapse:separate;border-spacing:6px;table-layout:
 .bodies{display:flex;flex-wrap:wrap;gap:8px}
 .bodies span{border:1px solid #4a4a46;font-family:var(--display);font-stretch:112%;font-weight:650;font-size:.95rem;padding:7px 12px;border-radius:999px;line-height:1.1;align-self:start}
 .prog .btn{justify-self:start;margin-top:8px}
-@media (max-width:860px){.progs{grid-template-columns:1fr}}
+.progs.single{grid-template-columns:1fr}
+.progs.single .prog{grid-template-columns:1fr 1fr;align-content:stretch}
+.progs.single .prog > img{height:0;min-height:100%;aspect-ratio:auto}
+@media (max-width:860px){.progs{grid-template-columns:1fr}.progs.single .prog{grid-template-columns:1fr}.progs.single .prog > img{height:auto;aspect-ratio:16/10}}
 
 /* nutrición */
 .nutri{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
@@ -207,7 +210,7 @@ footer a:hover{color:var(--sage)}
 <header class="top"><div class="wrap">
   <a class="brand" href="#inicio"><img src="cat-badge.webp" width="240" height="240" alt=""><span><b>WONKRU</b><small>TRAINING BOX</small></span></a>
   <nav class="menu" aria-label="Principal">
-    <a href="#horario">Horario</a><a href="#clases">Clases</a><a href="#programas">+60 y oposiciones</a><a href="#nutricion">Nutrición</a><a href="#box">El box</a><a href="#dudas">Dudas</a><a href="#donde">Contacto</a>
+    <a href="#horario">Horario</a><a href="#clases">Clases</a><a href="#oposiciones">Oposiciones</a><a href="#nutricion">Nutrición</a><a href="#box">El box</a><a href="#dudas">Dudas</a><a href="#donde">Contacto</a>
   </nav>
   <a class="btn" href="#donde">Clase de prueba</a>
 </div></header>
@@ -263,27 +266,13 @@ footer a:hover{color:var(--sage)}
   </div>
 </div></section>
 
-<section id="programas"><div class="wrap">
+<section id="oposiciones"><div class="wrap">
   <div class="sec-head">
-    <span class="label">Programas especiales</span>
+    <span class="label">Programa especial</span>
     <h2>Entrenamiento con un objetivo concreto</h2>
-    <p>Además de las clases del horario, tenemos dos programas pensados para necesidades muy concretas.</p>
+    <p>Además de las clases del horario, preparamos las pruebas físicas de oposiciones con un plan pensado para tu convocatoria.</p>
   </div>
-  <div class="progs">
-    <article class="prog">
-      <img src="img/todos.webp" alt="Atleta veterano haciendo press con mancuernas en el suelo durante una clase" loading="lazy">
-      <div class="in">
-        <span class="tag">Nuevo · enero 2027</span>
-        <h3>Wonkru Vital · mayores de 60</h3>
-        <p>Clases para personas mayores autónomas. Entrenamos para seguir siendo independientes en el día a día: subir escaleras, cargar la compra, levantarse del suelo y moverse con seguridad.</p>
-        <ul>
-          <li>Fuerza, equilibrio y movilidad adaptados a cada persona</li>
-          <li>Grupos reducidos con un coach siempre pendiente</li>
-          <li>Mañanas de 11:30 a 12:30</li>
-        </ul>
-        <a class="btn" href="https://wa.me/34628319570" target="_blank" rel="noopener">Pide información</a>
-      </div>
-    </article>
+  <div class="progs single">
     <article class="prog">
       <img src="img/oposiciones.webp" alt="Una bombera, un policía, una guardia civil y un militar de uniforme en la sala de Wonkru" loading="lazy" style="object-position:50% 72%">
       <div class="in">
@@ -389,7 +378,6 @@ footer a:hover{color:var(--sage)}
         <details><summary>¿Cuánto dura cada clase?</summary><p>Todas las clases duran una hora.</p></details>
         <details><summary>¿Qué diferencia hay entre Cross, Tone y Hybrid?</summary><p>Cross tiene calentamiento, fuerza y WOD. Tone es trabajo de fuerza con mancuernas, kettlebells y máquinas. Hybrid combina cardio y fuerza funcional por estaciones.</p></details>
         <details><summary>¿Hay clases el fin de semana?</summary><p>Los sábados a las 11:00 hay Hero WOD. El resto del fin de semana puedes entrenar por tu cuenta en la zona open.</p></details>
-        <details><summary>¿Tenéis clases para personas mayores?</summary><p>Sí. A partir de enero de 2027 empieza Wonkru Vital, para mayores de 60 años autónomos, por las mañanas de 11:30 a 12:30. Trabajamos fuerza, equilibrio y movilidad para mantener la independencia en el día a día.</p></details>
         <details><summary>¿Preparáis oposiciones?</summary><p>Sí, preparamos las pruebas físicas de bombero, Guardia Civil, Policía Local, Policía Nacional y Ejército. Escríbenos con tu convocatoria y te contamos cómo lo planteamos.</p></details>
         <details><summary>¿Qué es el "Open box" del horario?</summary><p>Es la zona libre del box. Está disponible a la vez que la clase para que puedas hacer tu propio entreno.</p></details>
       </div>
@@ -427,7 +415,7 @@ footer a:hover{color:var(--sage)}
 <footer><div class="wrap">
   <div class="cols">
     <div><span class="brand"><img src="cat-badge.webp" width="240" height="240" alt=""><span><b>WONKRU</b><small>TRAINING BOX</small></span></span><p class="slogan">Stronger than vinegar</p></div>
-    <div><h4>Entrenar</h4><ul><li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#programas">Wonkru Vital +60</a></li><li><a href="#programas">Oposiciones</a></li><li><a href="#nutricion">Nutrición</a></li></ul></div>
+    <div><h4>Entrenar</h4><ul><li><a href="#horario">Horario</a></li><li><a href="#clases">Clases</a></li><li><a href="#oposiciones">Oposiciones</a></li><li><a href="#nutricion">Nutrición</a></li></ul></div>
     <div><h4>El box</h4><ul><li><a href="#box">Instalaciones</a></li><li><a href="#primera">Primera vez</a></li><li><a href="#dudas">Preguntas frecuentes</a></li></ul></div>
     <div><h4>Contacto</h4><ul><li>628 319 570</li><li><a href="https://wa.me/34628319570" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.instagram.com/wonkrutrainingbox/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   </div>
