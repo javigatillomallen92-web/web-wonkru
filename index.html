@@ -117,9 +117,8 @@ table.sched{width:100%;border-collapse:separate;border-spacing:6px;table-layout:
 .bodies span{border:1px solid #4a4a46;font-family:var(--display);font-stretch:112%;font-weight:650;font-size:.95rem;padding:7px 12px;border-radius:999px;line-height:1.1;align-self:start}
 .prog .btn{justify-self:start;margin-top:8px}
 .progs.single{grid-template-columns:1fr}
-.progs.single .prog{grid-template-columns:1fr 1fr;align-content:stretch}
-.progs.single .prog > img{height:0;min-height:100%;aspect-ratio:auto}
-@media (max-width:860px){.progs{grid-template-columns:1fr}.progs.single .prog{grid-template-columns:1fr}.progs.single .prog > img{height:auto;aspect-ratio:16/10}}
+@media (min-width:861px){.progs.single .prog{grid-template-columns:1fr 1fr;align-content:stretch}.progs.single .prog > img{height:0;min-height:100%;aspect-ratio:auto}}
+@media (max-width:860px){.progs{grid-template-columns:1fr}}
 
 /* nutrición */
 .nutri{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
